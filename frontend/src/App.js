@@ -1,9 +1,14 @@
 import React from 'react'
+import { Routes, Route } from "react-router-dom";
+import Home from './Components/Home/Home';
+import Authentication from './Components/Authentication/Authentication';
 
 function App() {
   return (
     <div>
-      <h1 className='text-5xl font-bold'>Twitter Clone 🚀</h1>
+      <Routes>
+        <Route path='/' element={true ? <Home /> : < Authentication />} />
+      </Routes>
     </div>
   )
 }
