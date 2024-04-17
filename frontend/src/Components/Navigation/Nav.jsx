@@ -3,7 +3,8 @@ import Logo from '../Import/logo-black.png'
 import { NavMenu } from '../Navigation/NavMenu'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@mui/base';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { Avatar } from '@mui/material';
+import myPhoto from '../Import/my-photo.jpg'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { Menu, MenuItem } from '@mui/material';
 
@@ -47,12 +48,12 @@ function Nav() {
             </div>
             <div className='w-full flex items-center justify-around hover:bg-neutral-100 p-2 rounded-full'>
                 <div className='text-3xl'>
-                    < AccountCircleIcon />
+                    <Avatar alt="userlogo" src={myPhoto} />
                 </div>
                 <div className=''>
-                    <span className='text-lg font-semibold'>Om Prakash Mallik</span>
+                    <span className='font-bold'>Om Prakash Mallik</span>
                     <br />
-                    <span className='opacity-70'>@omprakashmallik91</span>
+                    <span className='opacity-70'>@0mprakashmallik</span>
                 </div>
                 <div>
                     <Button
