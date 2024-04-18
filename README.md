@@ -1,4 +1,4 @@
-## LINK : https://twitter-clone-three-dusky.vercel.app/
+## LINK : https://twitter-clone-three-dusky.vercel.app/ (not responsive for mobile screen)
 
 
 # Front-end
