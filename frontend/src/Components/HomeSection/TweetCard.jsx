@@ -1,7 +1,7 @@
 import React from 'react'
 import { Avatar, Button, Menu, MenuItem } from '@mui/material'
 import myPhoto from '../Import/my-photo.jpg'
-import RepeatIcon from '@mui/icons-material/Repeat';
+//import RepeatIcon from '@mui/icons-material/Repeat';
 import { useNavigate } from 'react-router-dom';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
@@ -95,7 +95,7 @@ function TweetCard() {
                     </div>
 
                     <div className='mt-2'>
-                        <div className='cursor-pointer'>
+                        <div onClick={() => navigate(`/tweet/${3}`)} className='cursor-pointer'>
                             <p className='mb-2 p-0'>Hello everyone! this is the first post from my account on this platform built by me hope you like it.</p>
                             <img
                                 src={myPhoto}

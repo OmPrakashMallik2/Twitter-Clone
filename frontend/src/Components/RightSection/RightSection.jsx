@@ -9,9 +9,13 @@ function RightSection() {
         console.log("change theme");
     }
     return (
-        <div className='py-5 sticky top'>
-            <div className='relative flex items-center'>
-                <input type="text" className='py-3 rounded-full text-gray-500 w-full pl-12' />
+        <div className='sticky top-0 pb-5'>
+            <div className='sticky top-0 pt-2 bg-white z-50 flex items-center'>
+                <input
+                    type="text"
+                    placeholder='Search'
+                    className='py-3 rounded-full text-gray-500 bg-neutral-200 w-full pl-12'
+                />
                 <div className='absolute top-0 left-0 pl-3 pt-3'>
                     <SearchOutlinedIcon className='text-gray-500' />
                 </div>
@@ -33,7 +37,7 @@ function RightSection() {
                     <p className='font-bold'>philippines vs thailand</p>
                 </div>
 
-                {[1, 2, 3,4].map((trending) => (
+                {[1, 2, 3, 4, 5].map((trending) => (
                     <div className='flex justify-between w-full'>
                         <div>
                             <p>Entertainment . Trending</p>
