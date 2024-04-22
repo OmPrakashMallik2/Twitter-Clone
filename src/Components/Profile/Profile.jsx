@@ -9,18 +9,19 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import TweetCard from '../HomeSection/TweetCard';
+import ProfileModel from './ProfileModel';
 
 function Profile() {
+
+    const [openProfileModel, setOpenProfileModel] = useState(false);
+    const handleProfileModel = () => setOpenProfileModel(true);
+    const handleClose = () => setOpenProfileModel(false);
 
     const [tabValue, setTabValue] = useState("1");
 
     const navigate = useNavigate();
 
     const handleBack = () => navigate(-1);
-
-    const handleProfileModel = () => {
-        console.log("handle profile model");
-    }
 
     const handleFollowuser = () => {
         console.log("handle follow model");
@@ -41,7 +42,7 @@ function Profile() {
             <section>
                 <img
                     className='w-[100%] h-[15rem] object-cover bg-neutral-800 rounded'
-                    src="https://twitter.com/0mprakashmallik/header_photo"
+                    src="https://cdn.pixabay.com/photo/2024/04/14/04/51/ai-generated-8694767_1280.jpg"
                     alt="profileCover"
                 />
             </section>
@@ -124,6 +125,10 @@ function Profile() {
                     <TabPanel value="3">Media</TabPanel>
                     <TabPanel value="4">Likes</TabPanel>
                 </TabContext>
+            </section>
+
+            <section>
+                <ProfileModel handleClose={handleClose} open={openProfileModel} />
             </section>
         </div>
     )

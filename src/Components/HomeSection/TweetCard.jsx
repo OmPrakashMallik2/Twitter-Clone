@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Avatar, Button, Menu, MenuItem } from '@mui/material'
 import myPhoto from '../Import/my-photo.jpg'
-//import RepeatIcon from '@mui/icons-material/Repeat';
 import { useNavigate } from 'react-router-dom';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
@@ -14,8 +13,13 @@ import EqualizerOutlinedIcon from '@mui/icons-material/EqualizerOutlined';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
+import ReplyModel from './ReplyModel';
 
 function TweetCard() {
+
+    const [openReplyModel, setOpenReplyModel] = useState(false);
+    const handleReplyModel = () => setOpenReplyModel(true);
+    const handleCloseReply = () => setOpenReplyModel(false);
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -38,10 +42,6 @@ function TweetCard() {
         handleClose();
     }
 
-    const handleReplyModel = () => {
-        console.log("clicked Reply Model");
-    }
-
     const handleRetweetModel = () => {
         console.log("clicked Retweet Model");
     }
@@ -55,7 +55,7 @@ function TweetCard() {
     }
 
     return (
-        <div>
+        <React.Fragment>
             {/* <div>
                 <RepeatIcon />
             </div> */}
@@ -136,7 +136,11 @@ function TweetCard() {
                     </div>
                 </div>
             </div>
-        </div>
+
+            <section>
+                <ReplyModel open={openReplyModel} handleClose={handleCloseReply} />
+            </section>
+        </React.Fragment>
     )
 }
 

@@ -3,11 +3,19 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import Brightness4OutlinedIcon from '@mui/icons-material/Brightness4Outlined';
 import { Button } from '@mui/material';
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
+import SubscriptionModel from '../Subscription/SubscriptionModel';
 
 function RightSection() {
+
+
+    const [openSubscriptionModel, setOpenSubscriptionModel] = React.useState(false);
+    const handleOpenSubscriptionModel = () => setOpenSubscriptionModel(true);
+    const handleCloseSubscriptionModel = () => setOpenSubscriptionModel(false);
+
     const handleChangeTheme = () => {
         console.log("change theme");
     }
+
     return (
         <div className='sticky top-0 pb-5'>
             <div className='sticky top-0 pt-2 bg-white z-50 flex items-center'>
@@ -25,7 +33,10 @@ function RightSection() {
             <section className='my-5'>
                 <h1 className='text-xl font-bold'>Get Verified</h1>
                 <h1 className='font-bold my-2'>Subscribe to unlock new features</h1>
-                <Button variant='contained' sx={{ padding: "10px", paddingX: "20px", borderRadius: "25px", }}>
+                <Button
+                    onClick={handleOpenSubscriptionModel}
+                    variant='contained'
+                    sx={{ padding: "10px", paddingX: "20px", borderRadius: "25px" }}>
                     Get verified
                 </Button>
             </section>
@@ -47,6 +58,10 @@ function RightSection() {
                         <MoreHorizOutlinedIcon />
                     </div>
                 ))}
+            </section>
+
+            <section>
+                <SubscriptionModel open={openSubscriptionModel} handleClose={handleCloseSubscriptionModel} />
             </section>
         </div>
     )
