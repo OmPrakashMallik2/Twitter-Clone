@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path='/*' element={true ? <Home /> : < Authentication />} />
+        <Route path='/*' element={false ? <Home /> : < Authentication />} />
       </Routes>
     </div>
   )

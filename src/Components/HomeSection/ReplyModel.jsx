@@ -30,6 +30,8 @@ export default function ReplyModel({handleClose, open}) {
     const [uploadingImage, setUploadingImage] = React.useState(false);
     const [selectedImage, setSelectedImage] = React.useState(null);
 
+    console.log(uploadingImage, selectedImage);
+
     const navigate = useNavigate();
 
     const handleSubmit = (value) => {

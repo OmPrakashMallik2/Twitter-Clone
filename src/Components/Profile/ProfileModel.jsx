@@ -24,6 +24,7 @@ export default function ProfileModel({ open, handleClose }) {
     // const [open, setOpen] = React.useState(false);
     const [uploading, setUploading] = React.useState(false);
 
+   console.log(uploading)
 
     const handleSubmit = (values) => {
         console.log("Hello", values);

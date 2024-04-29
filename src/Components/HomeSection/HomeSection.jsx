@@ -17,6 +17,8 @@ function HomeSection() {
     const [uploadingImage, setUploadingImage] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
 
+    console.log(uploadingImage, selectedImage);
+
     const handleSubmit = (values) => {
         console.log("values", values);
     };
